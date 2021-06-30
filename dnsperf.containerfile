@@ -23,7 +23,7 @@ WORKDIR /root
 RUN tar -xzvf dnsperf-2.6.0.tar.gz
 
 WORKDIR /root/dnsperf-2.6.0
-RUN ./configure
+RUN /bin/bash ./configure
 RUN make
 RUN make install
 
