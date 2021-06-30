@@ -1,6 +1,6 @@
 FROM registry.fedoraproject.org/fedora:34
 
-# RUN curl https://www.dns-oarc.net/files/dnsperf/dnsperf-2.6.0.tar.gz
+
 
 # my network utilities
 RUN dnf install -y \
@@ -17,7 +17,8 @@ RUN dnf install -y \
     gcc \ 
     openssl-devel
 
-COPY dnsperf-2.6.0.tar.gz /root/
+# COPY dnsperf-2.6.0.tar.gz /root/
+RUN curl https://www.dns-oarc.net/files/dnsperf/dnsperf-2.6.0.tar.gz -o /root/dnsperf-2.6.0.tar.gz
 COPY queries.txt /root/
 WORKDIR /root
 RUN tar -xzvf dnsperf-2.6.0.tar.gz
