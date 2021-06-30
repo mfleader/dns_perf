@@ -24,7 +24,7 @@ WORKDIR /root
 RUN tar -xzvf dnsperf-2.6.0.tar.gz
 
 WORKDIR /root/dnsperf-2.6.0
-ENV CONFIG_SHELL=/bin/bash
+# ENV CONFIG_SHELL=/bin/bash
 RUN ./configure
 RUN make
 RUN make install
